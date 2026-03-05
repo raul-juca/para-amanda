@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #2c2c2c;
+            background-color: #1a1a1a;
             margin: 0;
             display: flex;
             justify-content: center;
@@ -17,173 +17,236 @@
         }
 
         #book-container {
-            width: 90%;
-            max-width: 600px;
+            width: 95%;
+            max-width: 650px;
             background-color: #f4e4bc;
             background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            padding: 40px;
-            border-radius: 5px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.8);
+            padding: 30px;
+            border-radius: 2px;
             position: relative;
-            min-height: 500px;
+            min-height: 85vh;
             display: flex;
             flex-direction: column;
             border: 1px solid #d3c2a3;
+            margin: 20px 0;
         }
 
         .page {
-            display: none; /* Esconde todas as páginas por padrão */
-            animation: fadeIn 0.5s ease-in-out;
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
         }
 
         .page.active {
-            display: block; /* Mostra apenas a página ativa */
+            display: block;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        h1, h2 {
+        h1 {
             font-family: 'Dancing Script', cursive;
             color: #7d5a44;
             text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
         }
 
-        p {
-            font-size: 1.2rem;
+        .text-content {
+            font-size: 1.15rem;
             line-height: 1.6;
-            color: #332d22;
+            color: #2b261d;
             text-align: justify;
             margin-bottom: 20px;
+        }
+
+        /* Estilo para seus comentários em 3ª pessoa ou gírias */
+        .aside {
+            font-style: italic;
+            color: #8b6f47;
+            font-size: 0.95em;
         }
 
         .controls {
             margin-top: auto;
             display: flex;
             justify-content: space-between;
-            padding-top: 30px;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(125, 90, 68, 0.2);
         }
 
         button {
             background-color: #7d5a44;
             color: #f4e4bc;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 25px;
             font-family: 'EB Garamond', serif;
-            font-size: 1rem;
+            font-size: 1.1rem;
             cursor: pointer;
-            border-radius: 3px;
+            border-radius: 4px;
             transition: 0.3s;
         }
 
-        button:hover {
-            background-color: #5a4131;
-        }
+        button:hover { background-color: #5a4131; }
+        button:disabled { background-color: #d3c2a3; color: #a08d75; cursor: not-allowed; }
 
-        button:disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
-        }
+        .page-num { font-style: italic; color: #7d5a44; font-weight: bold; }
 
-        .page-number {
-            font-style: italic;
-            color: #7d5a44;
-            align-self: center;
+        @media (max-width: 600px) {
+            #book-container { padding: 20px; min-height: 90vh; }
+            .text-content { font-size: 1.05rem; }
         }
     </style>
 </head>
 <body>
 
 <div id="book-container">
+    
     <div class="page active">
-        <h1>Para: Amanda</h1>
-        <p style="text-align: center; font-style: italic; margin-top: 50px;">
-            Um registro de coisas que eu nunca disse em voz alta, escrito ao longo do tempo.
-        </p>
-        <p style="text-align: center; font-size: 0.9em; margin-top: 100px;">
-            (Use os botões abaixo para ler)
-        </p>
+        <h1>Oi Amanda!</h1>
+        <div class="text-content">
+            <p>Se algum dia isso, essa carta que estou escrevendo, chegar em você, saiba: eu não vou voltar a ser seu amigo mais, porque não tem como.</p>
+            <p>Quero que você leia e entenda que isso não sou eu dando em cima de você, nem nada do tipo. Eu sei como você odeia isso e quero deixar tudo bem claro.</p>
+            <p>Se algum dia isso chegar em você — seja por você estar namorando, eu terminando ou a gente brigando, algo que ocasione eu te entregar isso — quero que só entenda e não me procure mais.</p>
+        </div>
     </div>
 
     <div class="page">
-        <h2>O Começo do Fim</h2>
-        <p>Oi, Amanda. Se algum dia essa carta chegar em você, saiba: eu não vou voltar a ser seu amigo. Não dá mais.</p>
-        <p>Quero que entenda que isso não é "dar em cima". Eu sei o quanto você odeia isso e quero deixar tudo bem claro. Talvez isso te chegue enquanto você namora, ou num término, ou numa briga nossa. Só peço que leia, entenda e não me procure mais.</p>
+        <div class="text-content">
+            <p>E também, se eu estiver com a Duda, peço que não mostre a ela. Isso são meus sentimentos. Eu sei que você odeia isso também, de mesmo namorando gostar de outra pessoa, mas eu vou te explicar.</p>
+            <p>Eu sinto isso por você há muito tempo e decidi escrever tudo para um dia te entregar. Mesmo depois de casados, ou antes, um dia isso pode chegar em você.</p>
+            <p>Eu amo a Duda, te juro, com todas as minhas forças, mas eu sinto algo por você que não sei explicar. Provavelmente eu não vou falar mais com você nunca. Óbvio, não vou te desrespeitar se eu te ver, cumprimentarei, mas... acabou.</p>
+        </div>
     </div>
 
     <div class="page">
-        <h2>Sentimentos Guardados</h2>
-        <p>E se eu estiver com a Duda, peço que não mostre a ela. São meus sentimentos. Eu amo a Duda com todas as minhas forças, mas sinto por você algo que não sei explicar.</p>
-        <p>Eu sinto isso há muito tempo. Provavelmente, depois de te entregar isso, nunca mais nos falaremos. Se eu te vir, vou te cumprimentar por respeito, mas acabou.</p>
+        <div class="text-content">
+            <p>Eu sei como você odeia isso de "amigo que dá em cima", você me fala sobre isso sempre. Toda vez que você fala que odeia isso, me dói, porque se eu mostrar, acabou, não é mesmo? Só te peço que guarde isso, escrevi do fundo do meu coração!</p>
+            <p>É... não sei como te falar isso e provavelmente nunca vou, mas eu gosto realmente muito de você! Sério, não tem dia que eu não pense um minuto em ti, toda hora olhando sua foto ou vendo se tem mensagem sua para me alegrar, porque amo sua companhia.</p>
+            <p>Mas tenho medo das consequências que geraria. Eu realmente te amo, mas sei guardar para mim e não quero estragar tudo. E não é de agora, é de bem antes!</p>
+        </div>
     </div>
 
     <div class="page">
-        <h2>A Primeira Vez</h2>
-        <p>Tudo começou no 1° dia de aula, em 2023. Eu estava esperando o busão, olhei pro lado e era você. Fazia anos que não te via. Meu coração parou. "Caraca, ela voltou pra cá?", pensei.</p>
-        <p>Você foi minha paixonite a infância toda. Eu sempre quis falar com você, mas nunca tive coragem. Hoje somos "besties", quem diria? Antes da Duda, eu falava de você pra Julia todo santo dia no ônibus.</p>
+        <div class="text-content">
+            <p><span class="aside">Cada estrofe aqui vai ser falando algo, você sabe que não sei me expressar bem... escrevo para você desde que viramos amigos. Tem tempo kkkkk.</span></p>
+            <p>Só queria dizer que senti algo desde o 1° dia de aula, lá em 2023. Eu estava sozinho esperando o busão, nisso olhei para o lado. Era você! Fazia anos que não te via e, na hora, eu juro, fiquei uns bons segundos te olhando.</p>
+            <p>Aí virei para o lado e falei: "caraca, ela voltou para cá?". Como você sabe, você era minha paixonite a minha infância toda.</p>
+        </div>
     </div>
 
     <div class="page">
-        <h2>Desencontros</h2>
-        <p>Aí veio o Jhonatan. Ele dizia que vocês eram apaixonados. Eu vi vocês conversando e desisti. Decidi ser apenas seu amigo, mesmo com medo.</p>
-        <p>Viramos amigos, você me contou suas desilusões e eu percebi que o Jhonatan nunca foi nada do que eu pensava. Mas, quando notei isso, eu já estava namorando também. A vida tem dessas ironias.</p>
+        <div class="text-content">
+            <p>Eu sempre quis falar com você, mas, como sempre te digo, nunca tive coragem <span class="aside">e hoje somos besties kakakaka</span>.</p>
+            <p>Enfim, eu sempre falava para a Julia que você era minha paixão nos primeiros anos, antes de conhecer a Duda. Eu falava na ida do busão de Areias a Lorena e vice-versa. E aí a Julia também tinha uma quedinha e ficávamos nós dois em uma rixa.</p>
+            <p>Até que um dia chegou o Jhonatan. Ele disse que você era apaixonadinha nele e ele em você. Eu via vocês conversando sempre e falei: "acho que é verdade". Aí eu desisti e decidi virar seu amigo.</p>
+        </div>
     </div>
 
     <div class="page">
-        <h2>A Ironia</h2>
-        <p>Guardei você num canto da mente. Ontem, quando você disse que sonhou com o André, eu te disse: "temos que aprender a conviver com isso". Eu estava dando vestígios, mas você é uma pamonhinha, não percebe nada!</p>
-        <p>Você reclama que não acha ninguém, fala dos seus livros... e Amanda, eu sou exatamente o que você procura. Não sei se você não enxerga ou se o fato de eu namorar te cega.</p>
+        <div class="text-content">
+            <p>Foi quando comecei a interagir com você, mas sempre com receio, pois sempre tive medo kkkkk. Até que viramos mais amigos, você falou das suas desilusões e eu entendi que o Jhonatan nunca teve nada com você. Quando fui ver, eu já estava namorando também. <span class="aside">Mas só estou complementando a história kkkkk.</span></p>
+            <p>A partir daí, eu só te deixei em um canto da minha mente. Foi exatamente isso que ontem você me disse, que estava sonhando com o André e tals. Eu disse para você fazer isso, e em um dos áudios eu disse: "não tem muito o que a gente possa fazer, só aprender a conviver com isso".</p>
+            <p>Eu já te dei tantos vestígios kkkkk mas você é uma pamonhinha, brother. E eu aprendi a conviver com isso.</p>
+        </div>
     </div>
 
     <div class="page">
-        <h2>O Que Eu Poderia Ser</h2>
-        <p>Quando eu digo que não combinaríamos, é o contrário do que sinto. Eu queria te fazer cafuné, ser o seu príncipe de Dark Romance, seu quarterback atencioso... um Simon misturado com Theodore. Eu queria ser tudo seu, mas o acaso não deixou.</p>
-        <p>Eu vejo caras que não te dão valor e penso: "eu faria você se apaixonar por mim a cada gesto". Toda vez que eu falava "imagina se eu gostasse de você", não era exemplo. Era verdade.</p>
+        <div class="text-content">
+            <p><span class="aside">Vai ser meio bagunçado porque eu não escrevo tudo em um dia, escrevo há tempos e, quando os sentimentos vêm, eu decido escrever. Mas quero que você leia tudo isso como se fosse um romance, um clichezinho que você ama KKKKKKK.</span></p>
+            <p>Eu vejo você reclamando que não acha ninguém e falando sobre seus livros, e eu sou exatamente o que você procura. Só não sei se você não enxerga, ou se é lerda mesmo, ou o caso de eu me relacionar com outra pessoa.</p>
+            <p>Quando eu falo que a gente não combinaria, é totalmente o contrário do que eu queria dizer. Queria te fazer carinhos e cafunés, te entender e te compreender. Ser o príncipe dos seus livros e dark romances, ou o seu quarterback atencioso. Eu queria ser tudo seu.</p>
+        </div>
     </div>
 
     <div class="page">
-        <h2>A Rosa no Topo</h2>
-        <p>A Julia pedia pra eu falar com você, mas eu tinha medo. Você é linda demais. Pra mim, você é como uma rosa no topo de uma montanha e eu sou só um alpinista sem equipamento. Eu nunca chegaria aí.</p>
-        <p>Pelo menos viramos amigos. Foram dois anos de abraços que eu não trocaria por nada. Mas entregar isso é o meu "basta". É parar de sofrer por quem não é minha.</p>
+        <div class="text-content">
+            <p>Infelizmente o acaso não nos permitiu isso. Você fala quando algum dos garotos que você acha bonito não te dão o devido valor, e eu faria totalmente ao contrário. Eu faria você se apaixonar por mim a cada gesto meu.</p>
+            <p>Eu já te falei: "tantas pessoas que eu conheço que queriam ter a oportunidade deles e eles não valorizam". Era eu. Eu queria ter aquela oportunidade. Sempre falo algo assim sobre mim, tomara que você nunca imagine que sou eu.</p>
+            <p>Você fala de um amigo que era como irmão e deu em cima de você, e como isso te afetou. Penso às vezes em nunca mais falar com você. Deixando claro: eu não vim na intenção de acontecer isso, eu realmente queria ser seu amigo, e sou, mas isso acontece porque a gente combina demais. Na minha cabeça, sim.</p>
+        </div>
     </div>
 
     <div class="page">
-        <h2>O Adeus</h2>
-        <p>Não quero choro. Escrevi isso como um livro só pra você. Quero que guarde isso como um tesouro secreto. Talvez a gente se encontre no futuro e troque um “oi” rápido.</p>
-        <p>Espero que, se lembrar de mim, seja com um sorriso. Nossa história não foi um romance, mas foi a história mais bonita que eu já vivi. </p>
-        <p style="text-align: center; margin-top: 30px; font-weight: bold;">Fim.</p>
+        <div class="text-content">
+            <p>Então me desculpa não falar isso. Você mesma diz: "se tiver alguma coisa pra falar, não fala karalho" kkkkkkkk e isso me pega muito. Só sei que queria te ajudar com sua vida. Você fala que relacionamento iria só piorar tudo, mas não, Amanda, não iria.</p>
+            <p>E não te contei, e nunca contaria, mas nessa época do Jhonatan que eu realmente te queria, eu falava todo dia para a Julia o quanto gostava de você. Mas isso eu sempre te disse também, só que meio escondido. Eu sempre falo: "ah, vamos usar de exemplo se eu gostasse de você". Esses exemplos são todos verdadeiros. E você, lerda, nunca adivinharia, né? Akakakak.</p>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="text-content">
+            <p>Lembro que a Julia sempre me pedia para ir falar com você, mas sempre tive tanto medo porque você é linda. Para mim, é como se fosse uma rosa no topo de uma montanha e eu só um alpinista, sem equipamentos. Nunca chegaria em você, entendeu?</p>
+            <p>Mas pelo menos viramos amigos, e isso me fez conhecer a pessoa maravilhosa que você é, Amanda. Eu te admiro muito. Se eu tivesse dado em cima de você e não rolasse nada, às vezes nem poderíamos ter a chance de nos chamar de amigos, nem desses 2 anos de abraços jkkkk. Até.</p>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="text-content">
+            <p>Queria só te pedir 1000 desculpas, mesmo sabendo que você não vai aceitar nenhuma delas. Me perdoa por isso... não quero que você se apaixone por mim depois disso, não é a intenção. Não quero que você fique se remoendo porque perdeu uma amizade.</p>
+            <p>Se algum dia precisar desabafar, eu vou estar em algum canto, é só chamar. Quero que você aceite só meus sentimentos, entende? Quero que isso te faça bem. Eu sei que não vai fazer, porque você não gosta de perder amizades, mas me dói toda vez pensar em te mandar isso.</p>
+            <p>Você fala que todos seus amigos já deram em cima de você e que eles só queriam te pegar. Eu sou diferente, Amanda. Eu só te quis, por muito tempo kkkkk.</p>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="text-content">
+            <p>Escrevendo isso, eu estou entendendo que, quando eu entregar, vai ser o basta. Como se acabasse aqueles relacionamentos tóxicos. Eu não quero mais pensar em você, ou como você está, ou o porquê você demora para responder.</p>
+            <p>Não quero mais interferir no meu relacionamento para ficar pensando em você. Tem vezes que eu fico tão lá e tão cá que eu me perco. Eu só quero que você entenda meus sentimentos e guarde para você, apenas isso.</p>
+            <p>Tem vezes que eu tenho ciúmes de você, mesmo a gente não tendo nada. Eu sofro junto com você quando não está bem. Eu fico puto quando você se rebaixa. Amanda, você é uma das garotas mais espetaculares que eu já conheci. Você vai ser uma incrível mulher e profissional. Espero um dia, no futuro, poder ser seu amigo de novo kkkkkk.</p>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="text-content">
+            <p>E outra coisa: eu não quero choro lendo isso. Eu sei que você ama ler e estou escrevendo um especialmente para você. Não sei se vou criar algo para colocar ele dentro, não sei se vai ser tipo uma bomba que você lê uma vez e depois some... eu vou decidindo.</p>
+            <p>Mas eu sinto uma energia tão boa quando estou com você. Não sei se nos conhecemos em vidas passadas, mas tudo fica tão bom. Eu me sinto tão mal que sempre te elogio esperando um elogio de volta, naquela falsa esperança de você ter o mínimo por mim. Um pequeno sentimentozinho me faria tão feliz, mas acho que o louco dessa história sou eu, né? Kkkkkk.</p>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="text-content">
+            <p>Queria que pudéssemos ter sido diferentes, mas não sei se daríamos certo. Peço que, por favor, não mostre a ninguém. Guarde para você como um tesouro que ninguém nunca viu. Ok?</p>
+            <p>Talvez, quando você terminar de ler isso, nada mude. Talvez você feche essas páginas, respire fundo e continue vivendo a sua vida exatamente como antes. E tudo bem.</p>
+            <p>Porque, na verdade, esse livro nunca foi sobre fazer você sentir algo por mim. Foi só sobre não deixar essa história desaparecer como se nunca tivesse existido. Sobre registrar que existiu uma pessoa que conseguiu mexer comigo de um jeito que eu nunca soube explicar. Você.</p>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="text-content">
+            <p>Talvez, daqui a alguns anos, a gente nem se fale mais. Talvez a gente se encontre por acaso, troque um “oi” rápido e siga caminhos diferentes. Mas eu gosto de pensar que vai existir uma pequena lembrança de mim.</p>
+            <p>Não como alguém que tentou mudar sua vida, mas como alguém que, silenciosamente, sempre desejou que ela fosse feliz. E se um dia você lembrar de mim, eu espero que seja com um sorriso.</p>
+            <p>Porque, mesmo que a nossa história nunca tenha sido um romance, ela ainda foi uma história bonita para mim.</p>
+        </div>
     </div>
 
     <div class="controls">
-        <button id="prevBtn" onclick="changePage(-1)" disabled>Anterior</button>
-        <span class="page-number" id="pageIndicator">Pág. 1</span>
-        <button id="nextBtn" onclick="changePage(1)">Próximo</button>
+        <button id="prevBtn" onclick="changePage(-1)" disabled>Voltar</button>
+        <div class="page-num" id="pageNum">1 / 15</div>
+        <button id="nextBtn" onclick="changePage(1)">Avançar</button>
     </div>
 </div>
 
 <script>
-    let currentPage = 0;
+    let current = 0;
     const pages = document.querySelectorAll('.page');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
-    const pageIndicator = document.getElementById('pageIndicator');
+    const pageNum = document.getElementById('pageNum');
 
-    function changePage(direction) {
-        pages[currentPage].classList.remove('active');
-        currentPage += direction;
-        pages[currentPage].classList.add('active');
+    function changePage(dir) {
+        pages[current].classList.remove('active');
+        current += dir;
+        pages[current].classList.add('active');
 
-        // Atualizar botões
-        prevBtn.disabled = (currentPage === 0);
-        nextBtn.disabled = (currentPage === pages.length - 1);
+        prevBtn.disabled = (current === 0);
+        nextBtn.disabled = (current === pages.length - 1);
+        pageNum.innerText = `${current + 1} / ${pages.length}`;
         
-        // Atualizar indicador
-        pageIndicator.innerText = `Pág. ${currentPage + 1}`;
-        
-        // Rolar para o topo do container (importante para celular)
-        window.scrollTo(0, 0);
+        window.scrollTo(0,0);
     }
 </script>
 
